@@ -139,11 +139,18 @@
             flex-shrink: 0;
         }
 
-        /* ===== PRODUCT GRID ===== */
+        /* ===== PRODUCT GRID — NO EMPTY SPACES ===== */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+        }
+
+        /* Force the grid to fill properly */
+        .pricing-grid .pricing-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .pricing-card {
