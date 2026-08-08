@@ -44,7 +44,6 @@
             margin-top: 20px;
         }
 
-        /* ===== PRODUCT SERVICES ===== */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -52,16 +51,14 @@
             margin-top: 20px;
         }
 
-        /* ===== RETAINER SERVICES (FIXED) ===== */
+        /* ===== FIX: RETAINER GRID — FULL WIDTH ===== */
         .retainer-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
-            max-width: 800px;
-            margin: 20px auto 0;
+            margin: 20px 0 0;
         }
 
-        /* ===== CARD HEIGHT FIX ===== */
         .service-card {
             background: white;
             border-radius: 20px;
@@ -107,13 +104,13 @@
         @media (max-width: 992px) {
             .three-paths { grid-template-columns: 1fr 1fr; }
             .services-grid { grid-template-columns: 1fr 1fr; }
-            .retainer-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
+            .retainer-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
             .three-paths { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: 1fr; }
-            .retainer-grid { grid-template-columns: 1fr; max-width: 100%; }
+            .retainer-grid { grid-template-columns: 1fr; }
             .page-header h1 { font-size: 32px; }
         }
     </style>
@@ -288,7 +285,7 @@
         </div>
     </section>
 
-    <!-- ====== RETAINER SERVICES (FIXED SPACING) ====== -->
+    <!-- ====== RETAINER SERVICES (FIXED — FULL WIDTH) ====== -->
     <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
