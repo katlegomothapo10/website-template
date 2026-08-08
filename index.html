@@ -120,6 +120,77 @@
             margin-top: 20px;
         }
 
+        .services-grid-home {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .service-card-home {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card-home:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-card-home .service-badge {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+        .service-card-home .price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--purple);
+            margin: 8px 0;
+        }
+        .service-card-home h4 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+        .service-card-home p { color: #4b5563; font-size: 14px; line-height: 1.6; flex: 1; }
+        .service-card-home .service-cta { margin-top: 16px; }
+
+        /* ===== FLAGSHIP ON HOMEPAGE ===== */
+        .service-card-home.flagship {
+            border: 2px solid var(--purple);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+            position: relative;
+            background: linear-gradient(135deg, #faf5ff, #ffffff);
+        }
+        .service-card-home.flagship:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(139, 92, 246, 0.25);
+        }
+        .service-card-home.flagship .flagship-badge {
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            background: var(--gradient);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 16px;
+            border-radius: 40px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+        .service-card-home.flagship .price {
+            font-size: 24px;
+        }
+
         .trust-strip {
             display: flex;
             justify-content: center;
@@ -257,6 +328,7 @@
 
         @media (max-width: 992px) {
             .three-paths-home { grid-template-columns: 1fr 1fr; }
+            .services-grid-home { grid-template-columns: 1fr 1fr; }
             .help-grid { grid-template-columns: 1fr 1fr; }
             .case-grid { grid-template-columns: 1fr; }
             .process-grid { grid-template-columns: 1fr 1fr; }
@@ -270,11 +342,13 @@
             .hero-actions .btn-white,
             .hero-actions .btn-purple { width: 100%; max-width: 320px; text-align: center; }
             .three-paths-home { grid-template-columns: 1fr; }
+            .services-grid-home { grid-template-columns: 1fr; }
             .help-grid { grid-template-columns: 1fr; }
             .testimonial-grid { grid-template-columns: 1fr; }
             .process-grid { grid-template-columns: 1fr; }
             .hero-stats .stat-number { font-size: 24px; }
             .trust-strip { gap: 24px; }
+            .service-card-home.flagship .flagship-badge { position: relative; top: 0; right: 0; display: inline-block; margin-bottom: 8px; }
         }
 
         @media (max-width: 480px) {
@@ -387,26 +461,29 @@
         </div>
     </section>
 
-    <!-- ====== FEATURED SERVICES ====== -->
+    <!-- ====== FEATURED SERVICES WITH FLAGSHIP ====== -->
     <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Featured Services</span>
                 <h2 class="section-title">Start with what you <span class="highlight">need most</span>.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Our most popular product services. Fixed price. Immediate start.</p>
+                <p class="section-sub">Our most popular services. Fixed price. Immediate start.</p>
             </div>
 
-            <div class="services-grid stagger">
-                <div class="service-card">
+            <div class="services-grid-home stagger">
+                <!-- ===== FLAGSHIP: Growth Strategy ===== -->
+                <div class="service-card-home flagship">
+                    <span class="flagship-badge">Featured</span>
                     <span class="service-badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
                     <h4>Growth Strategy</h4>
-                    <p>Clarity before execution. A complete roadmap for your brand's content growth.</p>
+                    <p>The foundation of everything. A complete roadmap for your brand's content growth.</p>
                     <div class="price">R5,000</div>
-                    <a href="pricing.html" class="btn-primary btn-small service-cta">View Pricing</a>
+                    <a href="pricing.html" class="btn-purple btn-small service-cta">View Pricing</a>
                 </div>
 
-                <div class="service-card">
+                <!-- Content Audit -->
+                <div class="service-card-home">
                     <span class="service-badge" style="background:#dbeafe;color:#2563eb;">Audit</span>
                     <h4>Content Audit</h4>
                     <p>Understand what's working, what's holding you back, and what to improve.</p>
@@ -414,7 +491,8 @@
                     <a href="pricing.html" class="btn-primary btn-small service-cta">View Pricing</a>
                 </div>
 
-                <div class="service-card">
+                <!-- Video Editing -->
+                <div class="service-card-home">
                     <span class="service-badge" style="background:#dcfce7;color:#16a34a;">Production</span>
                     <h4>Video Editing</h4>
                     <p>Professional editing that makes your content stand out.</p>
