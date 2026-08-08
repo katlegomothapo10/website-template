@@ -63,29 +63,26 @@
             margin-bottom: 24px;
         }
 
-        /* ===== PRODUCT GRID ===== */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        /* ===== FLAGSHIP CARD ===== */
-        .pricing-card.flagship {
+        /* ===== FLAGSHIP CENTERED ===== */
+        .flagship-centered {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #faf5ff, #ffffff);
+            border-radius: 24px;
+            padding: 40px;
             border: 2px solid var(--purple);
             box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+            transition: all 0.3s ease;
             position: relative;
-            background: linear-gradient(135deg, #faf5ff, #ffffff);
-            grid-column: span 1;
         }
-        .pricing-card.flagship:hover {
-            transform: translateY(-6px);
+        .flagship-centered:hover {
+            transform: translateY(-4px);
             box-shadow: 0 16px 50px rgba(139, 92, 246, 0.25);
         }
-        .pricing-card.flagship .flagship-badge {
+        .flagship-centered .flagship-badge {
             position: absolute;
             top: -10px;
-            right: 16px;
+            right: 24px;
             background: var(--gradient);
             color: white;
             font-size: 10px;
@@ -96,10 +93,12 @@
             border-radius: 40px;
             box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
         }
-        .pricing-card.flagship .price {
+        .flagship-centered .price {
             font-size: 32px;
+            font-weight: 800;
+            color: var(--purple);
         }
-        .pricing-card.flagship .flagship-tag {
+        .flagship-centered .flagship-tag {
             display: inline-block;
             background: #fef3c7;
             color: #d97706;
@@ -109,18 +108,42 @@
             border-radius: 40px;
             margin-top: 4px;
         }
-        .pricing-card.flagship .service-desc {
-            font-size: 15px;
+        .flagship-centered .service-desc {
+            font-size: 16px;
             line-height: 1.8;
             color: #374151;
             margin-bottom: 8px;
-            flex: 1;
         }
-        .pricing-card.flagship .service-desc strong {
+        .flagship-centered .service-desc strong {
             color: var(--black);
         }
-        .pricing-card.flagship .service-cta {
-            margin-top: 8px;
+        .flagship-centered .includes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 16px;
+            margin: 12px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .flagship-centered .includes li {
+            padding: 4px 0;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 14px;
+            color: #374151;
+        }
+        .flagship-centered .includes li i {
+            color: var(--purple);
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* ===== PRODUCT GRID ===== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .pricing-card {
@@ -174,8 +197,6 @@
         .pricing-card .service-cta {
             margin-top: 16px;
         }
-
-        /* ===== WHAT'S INCLUDED LIST ===== */
         .pricing-card .includes {
             margin: 12px 0;
             padding: 0;
@@ -239,6 +260,7 @@
             .pricing-grid { grid-template-columns: 1fr 1fr; }
             .retainer-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
             .launch-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
+            .flagship-centered .includes { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -247,7 +269,13 @@
             .launch-grid { grid-template-columns: 1fr; max-width: 100%; }
             .page-header h1 { font-size: 32px; }
             .pricing-section h2 { font-size: 26px; }
-            .pricing-card.flagship .flagship-badge { position: relative; top: 0; right: 0; display: inline-block; margin-bottom: 8px; }
+            .flagship-centered { padding: 24px; }
+            .flagship-centered .flagship-badge { position: relative; top: 0; right: 0; display: inline-block; margin-bottom: 8px; }
+            .flagship-centered .includes { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .flagship-centered .price { font-size: 26px; }
         }
     </style>
 </head>
@@ -280,8 +308,41 @@
         </div>
     </section>
 
+    <!-- ====== FLAGSHIP — CENTERED ====== -->
+    <section class="section-full section-full-white">
+        <div class="container">
+            <div class="pricing-section">
+                <div style="text-align:center;margin-bottom:8px;">
+                    <span class="section-label" style="background:var(--purple);color:white;">Featured</span>
+                </div>
+                <div class="flagship-centered reveal">
+                    <span class="flagship-badge">Flagship</span>
+                    <span class="badge" style="background:#fef3c7;color:#d97706;font-size:11px;">Strategy</span>
+                    <h2 style="font-size:28px;font-weight:700;margin-bottom:4px;">Growth Strategy</h2>
+                    <div class="service-desc">
+                        <strong>The foundation of everything.</strong> Clarity before execution. A complete roadmap for your brand's content growth — from positioning to 90-day action plan.
+                    </div>
+                    <div class="price">R5,000</div>
+                    <div class="price-sub">one-time investment</div>
+                    <span class="flagship-tag">Most Popular — Start Here</span>
+                    <ul class="includes">
+                        <li><i class="fas fa-check"></i> Discovery Workshop</li>
+                        <li><i class="fas fa-check"></i> Business & Brand Audit</li>
+                        <li><i class="fas fa-check"></i> Content & Competitor Audit</li>
+                        <li><i class="fas fa-check"></i> Audience Research</li>
+                        <li><i class="fas fa-check"></i> Brand Positioning</li>
+                        <li><i class="fas fa-check"></i> Content Pillars</li>
+                        <li><i class="fas fa-check"></i> 90-Day Growth Blueprint</li>
+                        <li><i class="fas fa-check"></i> Strategic Recommendations</li>
+                    </ul>
+                    <a href="product-services.html#growth-strategy" class="btn-purple" style="display:inline-block;margin-top:8px;">Purchase Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ====== PRODUCT SERVICES ====== -->
-    <section class="section-full section-full-white" id="product">
+    <section class="section-full section-full-light-purple" id="product">
         <div class="container">
             <div class="pricing-section">
                 <div style="text-align:center;">
@@ -291,30 +352,6 @@
                 </div>
 
                 <div class="pricing-grid stagger">
-                    <!-- ===== FLAGSHIP: Growth Strategy ===== -->
-                    <div class="pricing-card flagship">
-                        <span class="flagship-badge">Featured</span>
-                        <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
-                        <h4>Growth Strategy</h4>
-                        <div class="service-desc">
-                            <strong>The foundation of everything.</strong> Clarity before execution. A complete roadmap for your brand's content growth — from positioning to 90-day action plan.
-                        </div>
-                        <div class="price">R5,000</div>
-                        <div class="price-sub">one-time</div>
-                        <span class="flagship-tag">Most Popular — Start Here</span>
-                        <ul class="includes">
-                            <li><i class="fas fa-check"></i> Discovery Workshop</li>
-                            <li><i class="fas fa-check"></i> Business & Brand Audit</li>
-                            <li><i class="fas fa-check"></i> Content & Competitor Audit</li>
-                            <li><i class="fas fa-check"></i> Audience Research</li>
-                            <li><i class="fas fa-check"></i> Brand Positioning</li>
-                            <li><i class="fas fa-check"></i> Content Pillars</li>
-                            <li><i class="fas fa-check"></i> 90-Day Growth Blueprint</li>
-                            <li><i class="fas fa-check"></i> Strategic Recommendations</li>
-                        </ul>
-                        <a href="product-services.html#growth-strategy" class="btn-purple btn-small service-cta">Purchase Now</a>
-                    </div>
-
                     <!-- Content Audit -->
                     <div class="pricing-card">
                         <span class="badge" style="background:#dbeafe;color:#2563eb;">Audit</span>
@@ -484,7 +521,7 @@
     </section>
 
     <!-- ====== RETAINER SERVICES ====== -->
-    <section class="section-full section-full-light-purple" id="retainer">
+    <section class="section-full section-full-white" id="retainer">
         <div class="container">
             <div class="pricing-section">
                 <div style="text-align:center;">
@@ -536,7 +573,7 @@
     </section>
 
     <!-- ====== LAUNCH SERVICES ====== -->
-    <section class="section-full section-full-white" id="launch">
+    <section class="section-full section-full-light-purple" id="launch">
         <div class="container">
             <div class="pricing-section">
                 <div style="text-align:center;">
@@ -594,7 +631,7 @@
     </section>
 
     <!-- ====== COMPARISON TABLE ====== -->
-    <section class="section-full section-full-light-blue">
+    <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Compare</span>
