@@ -113,6 +113,35 @@
             font-size: 14px;
             color: #9ca3af;
         }
+
+        .three-paths-home {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 992px) {
+            .three-paths-home { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .hero-actions .btn-white,
+            .hero-actions .btn-purple { width: 100%; max-width: 320px; text-align: center; }
+            .hero-stats { gap: 30px; flex-wrap: wrap; }
+            .hero-stats .stat-number { font-size: 24px; }
+            .three-paths-home { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .hero-tag { font-size: 10px; padding: 3px 12px; }
+            .hero-stats { gap: 20px; }
+            .hero-stats .stat-number { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -127,10 +156,11 @@
         </button>
         <nav class="nav-links" id="navLinks">
             <a href="services.html">Services</a>
+            <a href="all-products.html">Pricing</a>
+            <a href="launch.html">Launch</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="testimonials.html">Testimonials</a>
             <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
             <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
     </header>
@@ -164,37 +194,38 @@
         </div>
     </section>
 
-    <!-- ====== TWO PATHS ====== -->
+    <!-- ====== THREE PATHS ====== -->
     <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">How We Help</span>
-                <h2 class="section-title">Two ways to work with <span class="highlight">Framework Media</span>.</h2>
+                <h2 class="section-title">Three ways to work with <span class="highlight">Framework Media</span>.</h2>
                 <div class="accent-line"></div>
-                <p class="section-sub">Choose the path that fits your stage, your needs and your goals.</p>
             </div>
 
-            <div class="paths-grid">
-                <div class="path-card reveal-left">
+            <div class="three-paths-home">
+                <div class="path-card reveal">
                     <span class="icon"><i class="fas fa-box"></i></span>
                     <span class="badge badge-green">Fixed Price</span>
                     <h3>Product Services</h3>
-                    <p>Fixed scope. Fixed price. Start immediately. Perfect for businesses that know exactly what they need.</p>
-                    <div class="examples">
-                        <strong>Examples:</strong> Growth Strategy, Content Audit, YouTube Strategy, Editing, Scriptwriting, Carousel Design, Thumbnail Design
-                    </div>
-                    <a href="product-services.html" class="btn-primary" style="width:100%;">Browse Product Services</a>
+                    <p>Fixed scope. Fixed price. Start immediately.</p>
+                    <a href="product-services.html" class="btn-primary btn-small" style="width:100%;">Browse Products</a>
                 </div>
 
-                <div class="path-card reveal-right">
+                <div class="path-card reveal">
                     <span class="icon"><i class="fas fa-handshake"></i></span>
                     <span class="badge badge-gold">Custom Partnership</span>
                     <h3>Retainer Services</h3>
-                    <p>Custom partnerships. Strategy-led. Long-term. Perfect for businesses scaling with ongoing strategic support.</p>
-                    <div class="examples">
-                        <strong>Examples:</strong> Content Department, Growth Partner
-                    </div>
-                    <a href="retainer-services.html" class="btn-purple" style="width:100%;">Explore Retainers</a>
+                    <p>Custom partnerships. Strategy-led. Long-term.</p>
+                    <a href="retainer-services.html" class="btn-purple btn-small" style="width:100%;">Explore Retainers</a>
+                </div>
+
+                <div class="path-card reveal" style="border-color:var(--purple);">
+                    <span class="icon"><i class="fas fa-rocket"></i></span>
+                    <span class="badge badge-purple">Best for Beginners</span>
+                    <h3>Launch Package</h3>
+                    <p>Everything you need to start. Strategy + content + visuals.</p>
+                    <a href="launch.html" class="btn-purple btn-small" style="width:100%;">View Launch</a>
                 </div>
             </div>
         </div>
@@ -325,21 +356,21 @@
             <div class="testimonial-grid stagger">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> The biggest takeaway wasn't that I needed to post more — it was understanding my brand, refining my content pillars, and creating a clear direction for where I want my personal brand to go. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
+                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> The biggest takeaway wasn't that I needed to post more — it was understanding my brand, refining my content pillars, and creating a clear direction. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
                     <div class="author">— Entle S.</div>
                     <div class="author-title">Personal Brand Creator</div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> Framework Media is incredibly professional and genuinely takes the time to listen. They understood my concerns, explained everything clearly, and created a strategy that felt personalised rather than generic. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
+                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> Framework Media is incredibly professional and genuinely takes the time to listen. They understood my concerns and created a strategy that felt personalised. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
                     <div class="author">— Lebo M.</div>
                     <div class="author-title">Creator</div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> The strategy opened my eyes to things I was completely missing. It gave me a much clearer understanding of what I should focus on now to build the personal brand I envision for the future. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
+                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> The strategy opened my eyes to things I was completely missing. It gave me a much clearer understanding of what I should focus on now. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
                     <div class="author">— Josh G.</div>
                     <div class="author-title">Creator</div>
                 </div>
@@ -457,7 +488,8 @@
                     <h4>Services</h4>
                     <a href="product-services.html">Product Services</a>
                     <a href="retainer-services.html">Retainer Services</a>
-                    <a href="services.html">All Services</a>
+                    <a href="launch.html">Launch Package</a>
+                    <a href="all-products.html">All Products</a>
                 </div>
 
                 <div class="footer-col">
@@ -489,7 +521,6 @@
         </div>
     </footer>
 
-    <!-- ====== BACK TO TOP ====== -->
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </a>
