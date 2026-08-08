@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* ===== HOME SPECIFIC STYLES ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -121,8 +120,147 @@
             margin-top: 20px;
         }
 
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        .trust-strip .logo-item {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6b7280;
+            opacity: 0.6;
+            letter-spacing: 0.5px;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+        .help-item {
+            background: rgba(255,255,255,0.7);
+            border-radius: 12px;
+            padding: 16px 12px;
+            border: 1px solid rgba(139,92,246,0.1);
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .help-item:hover {
+            border-color: var(--purple);
+            background: rgba(255,255,255,0.95);
+            transform: translateY(-2px);
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .case-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .case-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .case-card .case-image {
+            aspect-ratio: 1 / 1;
+            background: var(--gradient-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .case-card .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .case-card .case-content { padding: 24px; text-align: center; }
+        .case-card .case-content .badge { font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 2px 12px; border-radius: 40px; display: inline-block; margin-bottom: 8px; }
+        .case-card .case-content h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .case-card .case-content p { color: #4b5563; font-size: 14px; line-height: 1.7; }
+        .case-card .case-content .stats { display: flex; gap: 12px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+        .case-card .case-content .stats span { background: #f3f4f6; padding: 4px 14px; border-radius: 40px; font-size: 13px; font-weight: 500; }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .testimonial-card .stars { color: #f59e0b; font-size: 18px; letter-spacing: 2px; margin-bottom: 8px; }
+        .testimonial-card .quote { font-size: 15px; line-height: 1.8; color: #1f2937; font-style: italic; margin-bottom: 12px; }
+        .testimonial-card .quote i { color: var(--purple); opacity: 0.3; font-size: 12px; }
+        .testimonial-card .author { font-weight: 700; color: var(--black); font-size: 15px; }
+        .testimonial-card .author-title { font-size: 13px; color: #6b7280; }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .process-step {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .process-step .step-number {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+        .process-step h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .process-step p { color: #4b5563; font-size: 14px; line-height: 1.7; }
+
         @media (max-width: 992px) {
             .three-paths-home { grid-template-columns: 1fr 1fr; }
+            .help-grid { grid-template-columns: 1fr 1fr; }
+            .case-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .hero-stats { gap: 30px; flex-wrap: wrap; }
         }
 
         @media (max-width: 768px) {
@@ -131,9 +269,12 @@
             .hero-actions { flex-direction: column; align-items: center; }
             .hero-actions .btn-white,
             .hero-actions .btn-purple { width: 100%; max-width: 320px; text-align: center; }
-            .hero-stats { gap: 30px; flex-wrap: wrap; }
-            .hero-stats .stat-number { font-size: 24px; }
             .three-paths-home { grid-template-columns: 1fr; }
+            .help-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .hero-stats .stat-number { font-size: 24px; }
+            .trust-strip { gap: 24px; }
         }
 
         @media (max-width: 480px) {
@@ -156,7 +297,7 @@
         </button>
         <nav class="nav-links" id="navLinks">
             <a href="services.html">Services</a>
-            <a href="all-products.html">Pricing</a>
+            <a href="pricing.html">Pricing</a>
             <a href="launch.html">Launch</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="testimonials.html">Testimonials</a>
@@ -175,7 +316,7 @@
             <p>Strategic content systems for businesses, founders, and creators who want to grow with intention — not noise.</p>
             <div class="hero-actions">
                 <a href="services.html" class="btn-white">Explore Services</a>
-                <a href="contact.html" class="btn-purple">Book a Strategy Call</a>
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple">Book a Strategy Call</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -194,8 +335,23 @@
         </div>
     </section>
 
+    <!-- ====== TRUST STRIP ====== -->
+    <section class="section-full section-full-white" style="padding:24px 0;">
+        <div class="container">
+            <div class="trust-strip">
+                <span class="logo-item">Trusted by founders</span>
+                <span class="logo-item">●</span>
+                <span class="logo-item">Built for creators</span>
+                <span class="logo-item">●</span>
+                <span class="logo-item">Strategy-led</span>
+                <span class="logo-item">●</span>
+                <span class="logo-item">System-driven</span>
+            </div>
+        </div>
+    </section>
+
     <!-- ====== THREE PATHS ====== -->
-    <section class="section-full section-full-white">
+    <section class="section-full section-full-light-purple">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">How We Help</span>
@@ -209,7 +365,7 @@
                     <span class="badge badge-green">Fixed Price</span>
                     <h3>Product Services</h3>
                     <p>Fixed scope. Fixed price. Start immediately.</p>
-                    <a href="product-services.html" class="btn-primary btn-small" style="width:100%;">Browse Products</a>
+                    <a href="pricing.html" class="btn-primary btn-small" style="width:100%;">View Pricing</a>
                 </div>
 
                 <div class="path-card reveal">
@@ -217,7 +373,7 @@
                     <span class="badge badge-gold">Custom Partnership</span>
                     <h3>Retainer Services</h3>
                     <p>Custom partnerships. Strategy-led. Long-term.</p>
-                    <a href="retainer-services.html" class="btn-purple btn-small" style="width:100%;">Explore Retainers</a>
+                    <a href="pricing.html" class="btn-purple btn-small" style="width:100%;">View Pricing</a>
                 </div>
 
                 <div class="path-card reveal" style="border-color:var(--purple);">
@@ -232,7 +388,7 @@
     </section>
 
     <!-- ====== FEATURED SERVICES ====== -->
-    <section class="section-full section-full-light-purple">
+    <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Featured Services</span>
@@ -247,7 +403,7 @@
                     <h4>Growth Strategy</h4>
                     <p>Clarity before execution. A complete roadmap for your brand's content growth.</p>
                     <div class="price">R5,000</div>
-                    <a href="product-services.html#growth-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    <a href="pricing.html" class="btn-primary btn-small service-cta">View Pricing</a>
                 </div>
 
                 <div class="service-card">
@@ -255,7 +411,7 @@
                     <h4>Content Audit</h4>
                     <p>Understand what's working, what's holding you back, and what to improve.</p>
                     <div class="price">R2,500</div>
-                    <a href="product-services.html#content-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    <a href="pricing.html" class="btn-primary btn-small service-cta">View Pricing</a>
                 </div>
 
                 <div class="service-card">
@@ -263,7 +419,7 @@
                     <h4>Video Editing</h4>
                     <p>Professional editing that makes your content stand out.</p>
                     <div class="price">R700 / video</div>
-                    <a href="product-services.html#video-editing" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    <a href="pricing.html" class="btn-primary btn-small service-cta">View Pricing</a>
                 </div>
             </div>
 
@@ -274,7 +430,7 @@
     </section>
 
     <!-- ====== WHO WE HELP ====== -->
-    <section class="section-full section-full-white">
+    <section class="section-full section-full-light-blue">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Who We Help</span>
@@ -297,7 +453,7 @@
     </section>
 
     <!-- ====== FEATURED CASE STUDIES ====== -->
-    <section class="section-full section-full-light-blue">
+    <section class="section-full section-full-light-pink">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Proof</span>
@@ -345,7 +501,7 @@
     </section>
 
     <!-- ====== TESTIMONIALS ====== -->
-    <section class="section-full section-full-light-pink">
+    <section class="section-full section-full-white">
         <div class="container">
             <div class="section-header">
                 <span class="pill reveal">Testimonials</span>
@@ -356,22 +512,15 @@
             <div class="testimonial-grid stagger">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> The biggest takeaway wasn't that I needed to post more — it was understanding my brand, refining my content pillars, and creating a clear direction. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
+                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.3;font-size:12px;"></i> The biggest takeaway wasn't that I needed to post more — it was understanding my brand, refining my content pillars, and creating a clear direction. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.3;font-size:12px;"></i></div>
                     <div class="author">— Entle S.</div>
                     <div class="author-title">Personal Brand Creator</div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> Framework Media is incredibly professional and genuinely takes the time to listen. They understood my concerns and created a strategy that felt personalised. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
+                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.3;font-size:12px;"></i> Framework Media is incredibly professional and genuinely takes the time to listen. They understood my concerns and created a strategy that felt personalised. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.3;font-size:12px;"></i></div>
                     <div class="author">— Lebo M.</div>
-                    <div class="author-title">Creator</div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="quote"><i class="fas fa-quote-left" style="color:var(--purple);opacity:0.4;font-size:12px;"></i> The strategy opened my eyes to things I was completely missing. It gave me a much clearer understanding of what I should focus on now. <i class="fas fa-quote-right" style="color:var(--purple);opacity:0.4;font-size:12px;"></i></div>
-                    <div class="author">— Josh G.</div>
                     <div class="author-title">Creator</div>
                 </div>
             </div>
@@ -414,46 +563,9 @@
                     <p>We optimise, refine and support your long-term growth.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ====== FAQ PREVIEW ====== -->
-    <section class="section-full section-full-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="pill reveal">FAQ</span>
-                <h2 class="section-title">Quick <span class="highlight">answers</span>.</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="faq-grid">
-                <div class="faq-item reveal">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        Who is Framework Media for?
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer">Service-based businesses, entrepreneurs, personal brands, creators, coaches, and consultants. If you're building an audience and need content that drives commercial outcomes, this is for you.</div>
-                </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        How is this different from a regular agency?
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer">We use the exact system that grew our own audience. We're not guessing — we're repeating a proven process. We build systems, not just content.</div>
-                </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        How long does it take to get started?
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer">For product services, you can start immediately after purchase. For retainers, we'll begin after your discovery call.</div>
-                </div>
-            </div>
-
-            <div style="text-align:center;margin-top:24px;">
-                <a href="faq.html" class="btn-outline">View All FAQs</a>
+            <div style="text-align:center;margin-top:32px;">
+                <a href="services.html" class="btn-outline">Learn More About Our Process</a>
             </div>
         </div>
     </section>
@@ -468,7 +580,7 @@
             </div>
 
             <div style="text-align:center;">
-                <a href="contact.html" class="btn-white">Book a Strategy Call</a>
+                <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-white">Book a Strategy Call</a>
             </div>
         </div>
     </section>
@@ -486,10 +598,9 @@
 
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="product-services.html">Product Services</a>
-                    <a href="retainer-services.html">Retainer Services</a>
+                    <a href="services.html">How We Help</a>
+                    <a href="pricing.html">Pricing</a>
                     <a href="launch.html">Launch Package</a>
-                    <a href="all-products.html">All Products</a>
                 </div>
 
                 <div class="footer-col">
