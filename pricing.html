@@ -63,11 +63,66 @@
             margin-bottom: 24px;
         }
 
+        /* ===== PRODUCT GRID ===== */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
+
+        /* ===== FLAGSHIP CARD ===== */
+        .pricing-card.flagship {
+            border: 2px solid var(--purple);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+            position: relative;
+            background: linear-gradient(135deg, #faf5ff, #ffffff);
+            grid-column: span 1;
+        }
+        .pricing-card.flagship:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(139, 92, 246, 0.25);
+        }
+        .pricing-card.flagship .flagship-badge {
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            background: var(--gradient);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 16px;
+            border-radius: 40px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+        .pricing-card.flagship .price {
+            font-size: 32px;
+        }
+        .pricing-card.flagship .flagship-tag {
+            display: inline-block;
+            background: #fef3c7;
+            color: #d97706;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-top: 4px;
+        }
+        .pricing-card.flagship .service-desc {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #374151;
+            margin-bottom: 8px;
+            flex: 1;
+        }
+        .pricing-card.flagship .service-desc strong {
+            color: var(--black);
+        }
+        .pricing-card.flagship .service-cta {
+            margin-top: 8px;
+        }
+
         .pricing-card {
             background: white;
             border-radius: 20px;
@@ -76,6 +131,7 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         .pricing-card:hover {
             border-color: var(--purple);
@@ -104,9 +160,42 @@
             color: #6b7280;
             margin-bottom: 12px;
         }
-        .pricing-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-        .pricing-card p { color: #4b5563; font-size: 14px; line-height: 1.6; flex: 1; }
-        .pricing-card .service-cta { margin-top: 16px; }
+        .pricing-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .pricing-card p {
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .pricing-card .service-cta {
+            margin-top: 16px;
+        }
+
+        /* ===== WHAT'S INCLUDED LIST ===== */
+        .pricing-card .includes {
+            margin: 12px 0;
+            padding: 0;
+            list-style: none;
+            flex: 1;
+        }
+        .pricing-card .includes li {
+            padding: 3px 0;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 13px;
+            color: #374151;
+            line-height: 1.5;
+        }
+        .pricing-card .includes li i {
+            color: var(--purple);
+            font-size: 11px;
+            flex-shrink: 0;
+        }
 
         /* ===== RETAINER ===== */
         .retainer-grid {
@@ -128,21 +217,12 @@
             max-width: 700px;
             margin: 0 auto;
         }
-        .launch-grid .pricing-card {
-            border-color: #fef3c7;
-        }
         .launch-grid .pricing-card .price .original {
             font-size: 18px;
             color: #9ca3af;
             text-decoration: line-through;
             font-weight: 400;
             margin-right: 8px;
-        }
-        .launch-grid .pricing-card .price {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--purple);
-            margin: 8px 0 4px;
         }
         .launch-grid .pricing-card .savings {
             display: inline-block;
@@ -167,6 +247,7 @@
             .launch-grid { grid-template-columns: 1fr; max-width: 100%; }
             .page-header h1 { font-size: 32px; }
             .pricing-section h2 { font-size: 26px; }
+            .pricing-card.flagship .flagship-badge { position: relative; top: 0; right: 0; display: inline-block; margin-bottom: 8px; }
         }
     </style>
 </head>
@@ -205,19 +286,33 @@
             <div class="pricing-section">
                 <div style="text-align:center;">
                     <span class="section-label" style="background:#dcfce7;color:#16a34a;">Fixed Price</span>
-                    <h2>📦 Product Services</h2>
+                    <h2>Product Services</h2>
                     <p class="sub">Fixed scope. Fixed price. Start immediately. Pick what you need.</p>
                 </div>
 
                 <div class="pricing-grid stagger">
-                    <!-- Growth Strategy -->
-                    <div class="pricing-card">
+                    <!-- ===== FLAGSHIP: Growth Strategy ===== -->
+                    <div class="pricing-card flagship">
+                        <span class="flagship-badge">Featured</span>
                         <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
                         <h4>Growth Strategy</h4>
-                        <p>Clarity before execution. A complete roadmap for your brand's content growth.</p>
+                        <div class="service-desc">
+                            <strong>The foundation of everything.</strong> Clarity before execution. A complete roadmap for your brand's content growth — from positioning to 90-day action plan.
+                        </div>
                         <div class="price">R5,000</div>
                         <div class="price-sub">one-time</div>
-                        <a href="product-services.html#growth-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
+                        <span class="flagship-tag">Most Popular — Start Here</span>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Discovery Workshop</li>
+                            <li><i class="fas fa-check"></i> Business & Brand Audit</li>
+                            <li><i class="fas fa-check"></i> Content & Competitor Audit</li>
+                            <li><i class="fas fa-check"></i> Audience Research</li>
+                            <li><i class="fas fa-check"></i> Brand Positioning</li>
+                            <li><i class="fas fa-check"></i> Content Pillars</li>
+                            <li><i class="fas fa-check"></i> 90-Day Growth Blueprint</li>
+                            <li><i class="fas fa-check"></i> Strategic Recommendations</li>
+                        </ul>
+                        <a href="product-services.html#growth-strategy" class="btn-purple btn-small service-cta">Purchase Now</a>
                     </div>
 
                     <!-- Content Audit -->
@@ -227,6 +322,15 @@
                         <p>Understand what's working, what's holding you back, and what to improve.</p>
                         <div class="price">R2,500</div>
                         <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Content Review (30+ pieces)</li>
+                            <li><i class="fas fa-check"></i> Performance Analysis</li>
+                            <li><i class="fas fa-check"></i> Platform Assessment</li>
+                            <li><i class="fas fa-check"></i> Engagement Analysis</li>
+                            <li><i class="fas fa-check"></i> Visual & Copy Review</li>
+                            <li><i class="fas fa-check"></i> Competitive Benchmarking</li>
+                            <li><i class="fas fa-check"></i> Improvement Recommendations</li>
+                        </ul>
                         <a href="product-services.html#content-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
@@ -237,6 +341,15 @@
                         <p>A complete roadmap to grow your YouTube channel with intention.</p>
                         <div class="price">R4,000</div>
                         <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Channel Positioning</li>
+                            <li><i class="fas fa-check"></i> Content Strategy</li>
+                            <li><i class="fas fa-check"></i> Video Structure</li>
+                            <li><i class="fas fa-check"></i> Thumbnail Strategy</li>
+                            <li><i class="fas fa-check"></i> SEO Strategy</li>
+                            <li><i class="fas fa-check"></i> Publishing Calendar</li>
+                            <li><i class="fas fa-check"></i> Audience Growth Plan</li>
+                        </ul>
                         <a href="product-services.html#youtube-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
@@ -247,6 +360,15 @@
                         <p>Actionable insights to turn your channel into a growth engine.</p>
                         <div class="price">R3,000</div>
                         <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Channel Review</li>
+                            <li><i class="fas fa-check"></i> Branding Assessment</li>
+                            <li><i class="fas fa-check"></i> Thumbnail Analysis</li>
+                            <li><i class="fas fa-check"></i> Title & Description Review</li>
+                            <li><i class="fas fa-check"></i> SEO Evaluation</li>
+                            <li><i class="fas fa-check"></i> Retention Analysis</li>
+                            <li><i class="fas fa-check"></i> Improvement Recommendations</li>
+                        </ul>
                         <a href="product-services.html#youtube-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
@@ -257,6 +379,15 @@
                         <p>Build a personal brand people recognise, trust and remember.</p>
                         <div class="price">R3,000</div>
                         <div class="price-sub">one-time</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Personal Brand Discovery</li>
+                            <li><i class="fas fa-check"></i> Positioning & Differentiation</li>
+                            <li><i class="fas fa-check"></i> Brand Narrative</li>
+                            <li><i class="fas fa-check"></i> Messaging Framework</li>
+                            <li><i class="fas fa-check"></i> Content Pillars</li>
+                            <li><i class="fas fa-check"></i> Platform Selection</li>
+                            <li><i class="fas fa-check"></i> Content Strategy</li>
+                        </ul>
                         <a href="product-services.html#personal-brand" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
@@ -267,6 +398,14 @@
                         <p>Professional editing that makes your content stand out.</p>
                         <div class="price">R700</div>
                         <div class="price-sub">per video</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Video Cleaning (Trim, Cut, Sync)</li>
+                            <li><i class="fas fa-check"></i> Motion Graphics (Text, Overlays)</li>
+                            <li><i class="fas fa-check"></i> Audio Enhancement</li>
+                            <li><i class="fas fa-check"></i> B-Roll Integration</li>
+                            <li><i class="fas fa-check"></i> Colour Grading</li>
+                            <li><i class="fas fa-check"></i> End Screens & CTAs</li>
+                        </ul>
                         <a href="product-services.html#video-editing" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
@@ -277,6 +416,14 @@
                         <p>Scripts designed for retention, engagement and conversion.</p>
                         <div class="price">R350</div>
                         <div class="price-sub">per script</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Platform-Specific Script</li>
+                            <li><i class="fas fa-check"></i> Hook & Intro</li>
+                            <li><i class="fas fa-check"></i> Body Structure</li>
+                            <li><i class="fas fa-check"></i> Engagement Triggers</li>
+                            <li><i class="fas fa-check"></i> Call to Action</li>
+                            <li><i class="fas fa-check"></i> Visual Notes</li>
+                        </ul>
                         <a href="product-services.html#scriptwriting" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
@@ -287,6 +434,13 @@
                         <p>Educational carousels that build authority and save time.</p>
                         <div class="price">R750</div>
                         <div class="price-sub">per carousel</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Research</li>
+                            <li><i class="fas fa-check"></i> Copywriting</li>
+                            <li><i class="fas fa-check"></i> Design (5-10 Slides)</li>
+                            <li><i class="fas fa-check"></i> Branding</li>
+                            <li><i class="fas fa-check"></i> Formatting</li>
+                        </ul>
                         <a href="product-services.html#carousel-design" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
@@ -297,6 +451,14 @@
                         <p>Thumbnails that stop the scroll and drive clicks.</p>
                         <div class="price">R350</div>
                         <div class="price-sub">per thumbnail</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Concept Creation</li>
+                            <li><i class="fas fa-check"></i> Design</li>
+                            <li><i class="fas fa-check"></i> Text & Typography</li>
+                            <li><i class="fas fa-check"></i> Image Selection</li>
+                            <li><i class="fas fa-check"></i> Colour Grading</li>
+                            <li><i class="fas fa-check"></i> Formatting</li>
+                        </ul>
                         <a href="product-services.html#thumbnail-design" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
@@ -307,6 +469,13 @@
                         <p>A monthly roadmap that eliminates guesswork.</p>
                         <div class="price">R1,500</div>
                         <div class="price-sub">per month</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Monthly Content Calendar</li>
+                            <li><i class="fas fa-check"></i> Posting Schedule</li>
+                            <li><i class="fas fa-check"></i> Platform Recommendations</li>
+                            <li><i class="fas fa-check"></i> Content Mix</li>
+                            <li><i class="fas fa-check"></i> Topic Ideation</li>
+                        </ul>
                         <a href="product-services.html#content-planning" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
                 </div>
@@ -320,7 +489,7 @@
             <div class="pricing-section">
                 <div style="text-align:center;">
                     <span class="section-label" style="background:#fef3c7;color:#d97706;">Custom Partnership</span>
-                    <h2>🤝 Retainer Services</h2>
+                    <h2>Retainer Services</h2>
                     <p class="sub">Custom partnerships for businesses ready to scale with ongoing strategic support.</p>
                 </div>
 
@@ -331,6 +500,16 @@
                         <p>Your outsourced content team. Strategy, production and consistency.</p>
                         <div class="price" style="font-size:24px;">R12,500 – R35,000</div>
                         <div class="price-sub">per month</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Monthly Strategy Call</li>
+                            <li><i class="fas fa-check"></i> Content Calendar</li>
+                            <li><i class="fas fa-check"></i> Content Production (Videos, Carousels, Captions)</li>
+                            <li><i class="fas fa-check"></i> Scriptwriting</li>
+                            <li><i class="fas fa-check"></i> Video Editing</li>
+                            <li><i class="fas fa-check"></i> Thumbnails</li>
+                            <li><i class="fas fa-check"></i> Analytics & Reporting</li>
+                            <li><i class="fas fa-check"></i> Ongoing Optimisation</li>
+                        </ul>
                         <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small service-cta">Book Discovery Call</a>
                     </div>
 
@@ -340,6 +519,15 @@
                         <p>Strategic partnership for business leaders building authority and revenue through content.</p>
                         <div class="price" style="font-size:24px;">R7,500 – R20,000</div>
                         <div class="price-sub">per month</div>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Monthly Strategy Meeting</li>
+                            <li><i class="fas fa-check"></i> Marketing Direction</li>
+                            <li><i class="fas fa-check"></i> Offer Reviews</li>
+                            <li><i class="fas fa-check"></i> Business Consulting</li>
+                            <li><i class="fas fa-check"></i> Accountability</li>
+                            <li><i class="fas fa-check"></i> WhatsApp Access</li>
+                            <li><i class="fas fa-check"></i> Priority Support</li>
+                        </ul>
                         <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small service-cta">Book Discovery Call</a>
                     </div>
                 </div>
@@ -353,14 +541,14 @@
             <div class="pricing-section">
                 <div style="text-align:center;">
                     <span class="section-label" style="background:#ede9fe;color:var(--purple);">Best for Beginners</span>
-                    <h2>🚀 Launch Services</h2>
+                    <h2>Launch Services</h2>
                     <p class="sub">Everything you need to start. Strategy + content + visuals — all in one package.</p>
                 </div>
 
                 <div class="launch-grid">
                     <!-- Creator Launch -->
                     <div class="pricing-card" style="border-color:#fef3c7;">
-                        <span class="savings">🔥 Save 35%</span>
+                        <span class="savings">Save 35%</span>
                         <span class="badge" style="background:#fef3c7;color:#d97706;">Creator</span>
                         <h4>Creator Launch</h4>
                         <p>Perfect for individuals building a personal brand.</p>
@@ -368,20 +556,20 @@
                             <span class="original">R7,500</span> R4,875
                         </div>
                         <div class="price-sub">one-time</div>
-                        <ul style="list-style:none;margin:12px 0;text-align:left;font-size:13px;color:#374151;flex:1;">
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Personal Brand Strategy</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Profile Optimisation</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 30 Content Ideas</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 10 Scripts</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 10 Edited Videos</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 2 Carousels</li>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Personal Brand Strategy</li>
+                            <li><i class="fas fa-check"></i> Profile Optimisation</li>
+                            <li><i class="fas fa-check"></i> 30 Content Ideas</li>
+                            <li><i class="fas fa-check"></i> 10 Scripts</li>
+                            <li><i class="fas fa-check"></i> 10 Edited Videos</li>
+                            <li><i class="fas fa-check"></i> 2 Carousels</li>
                         </ul>
                         <a href="#" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
                     <!-- Business Launch -->
                     <div class="pricing-card" style="border-color:var(--purple);">
-                        <span class="savings">🔥 Save 35%</span>
+                        <span class="savings">Save 35%</span>
                         <span class="badge" style="background:var(--purple);color:white;">Popular</span>
                         <span class="badge" style="background:#fef3c7;color:#d97706;">Business</span>
                         <h4>Business Launch</h4>
@@ -390,13 +578,13 @@
                             <span class="original">R12,500</span> R8,125
                         </div>
                         <div class="price-sub">one-time</div>
-                        <ul style="list-style:none;margin:12px 0;text-align:left;font-size:13px;color:#374151;flex:1;">
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Growth Strategy</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Content Calendar</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Brand Messaging</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 10 Scripts</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 10 Edited Videos</li>
-                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Analytics Setup</li>
+                        <ul class="includes">
+                            <li><i class="fas fa-check"></i> Growth Strategy</li>
+                            <li><i class="fas fa-check"></i> Content Calendar</li>
+                            <li><i class="fas fa-check"></i> Brand Messaging</li>
+                            <li><i class="fas fa-check"></i> 10 Scripts</li>
+                            <li><i class="fas fa-check"></i> 10 Edited Videos</li>
+                            <li><i class="fas fa-check"></i> Analytics Setup</li>
                         </ul>
                         <a href="#" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
@@ -466,12 +654,6 @@
                             <td style="padding:16px 20px;border-top:2px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;font-size:13px;font-weight:400;">One-off needs<br>Fixed scope</td>
                             <td style="padding:16px 20px;border-top:2px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;font-size:13px;font-weight:400;">Scaling businesses<br>Ongoing support</td>
                             <td style="padding:16px 20px;border-top:2px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;font-size:13px;font-weight:400;">New brands<br>Everything included</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:16px 20px;border-top:1px solid #e5e7eb;font-size:14px;"></td>
-                            <td style="padding:16px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;"><a href="#product" class="btn-primary btn-small">View All</a></td>
-                            <td style="padding:16px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;"><a href="#retainer" class="btn-purple btn-small">View All</a></td>
-                            <td style="padding:16px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;"><a href="#launch" class="btn-primary btn-small">View All</a></td>
                         </tr>
                     </tbody>
                 </table>
