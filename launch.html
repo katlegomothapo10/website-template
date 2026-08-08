@@ -152,6 +152,59 @@
             margin-top: 4px;
         }
 
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover { border-color: var(--purple); }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+            color: var(--black);
+        }
+        .faq-question:hover { background: var(--gradient-subtle); }
+        .faq-question .faq-toggle {
+            font-size: 20px;
+            color: var(--purple);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+        .faq-question.active .faq-toggle { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 24px;
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .faq-answer.open {
+            max-height: 400px;
+            padding: 0 24px 20px;
+        }
+
         @media (max-width: 768px) {
             .launch-grid { grid-template-columns: 1fr; }
             .launch-comparison { grid-template-columns: 1fr; }
@@ -172,7 +225,7 @@
         </button>
         <nav class="nav-links" id="navLinks">
             <a href="services.html">Services</a>
-            <a href="all-products.html">Pricing</a>
+            <a href="pricing.html">Pricing</a>
             <a href="launch.html" class="active">Launch</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="testimonials.html">Testimonials</a>
@@ -395,10 +448,9 @@
 
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="product-services.html">Product Services</a>
-                    <a href="retainer-services.html">Retainer Services</a>
+                    <a href="services.html">How We Help</a>
+                    <a href="pricing.html">Pricing</a>
                     <a href="launch.html">Launch Package</a>
-                    <a href="all-products.html">All Products</a>
                 </div>
 
                 <div class="footer-col">
