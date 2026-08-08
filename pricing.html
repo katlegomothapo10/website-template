@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Pricing — Framework Media</title>
-    <meta name="description" content="Complete list of Framework Media service pricing. Strategy, audits, production, design, and retainer services." />
+    <meta name="description" content="Complete list of Framework Media service pricing. Product, Retainer, and Launch services." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,10 +40,20 @@
         .pricing-section {
             margin-bottom: 60px;
         }
+        .pricing-section .section-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 14px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+        }
         .pricing-section h2 {
             font-size: 32px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             text-align: center;
         }
         .pricing-section .sub {
@@ -98,25 +108,63 @@
         .pricing-card p { color: #4b5563; font-size: 14px; line-height: 1.6; flex: 1; }
         .pricing-card .service-cta { margin-top: 16px; }
 
-        .retainer-pricing {
+        /* ===== RETAINER ===== */
+        .retainer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
             max-width: 800px;
             margin: 0 auto;
         }
-        .retainer-pricing .pricing-card {
+        .retainer-grid .pricing-card {
             border-color: var(--purple);
+        }
+
+        /* ===== LAUNCH ===== */
+        .launch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .launch-grid .pricing-card {
+            border-color: #fef3c7;
+        }
+        .launch-grid .pricing-card .price .original {
+            font-size: 18px;
+            color: #9ca3af;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-right: 8px;
+        }
+        .launch-grid .pricing-card .price {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--purple);
+            margin: 8px 0 4px;
+        }
+        .launch-grid .pricing-card .savings {
+            display: inline-block;
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-bottom: 8px;
         }
 
         @media (max-width: 992px) {
             .pricing-grid { grid-template-columns: 1fr 1fr; }
-            .retainer-pricing { grid-template-columns: 1fr 1fr; max-width: 100%; }
+            .retainer-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
+            .launch-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
         }
 
         @media (max-width: 768px) {
             .pricing-grid { grid-template-columns: 1fr; }
-            .retainer-pricing { grid-template-columns: 1fr; max-width: 100%; }
+            .retainer-grid { grid-template-columns: 1fr; max-width: 100%; }
+            .launch-grid { grid-template-columns: 1fr; max-width: 100%; }
             .page-header h1 { font-size: 32px; }
             .pricing-section h2 { font-size: 26px; }
         }
@@ -147,18 +195,22 @@
     <section class="page-header">
         <div class="container">
             <h1>Transparent <span class="highlight">Pricing</span></h1>
-            <p>All services listed by category. Fixed prices and custom partnerships.</p>
+            <p>All services listed by path. Pick what fits your business.</p>
         </div>
     </section>
 
-    <!-- ====== STRATEGY SERVICES ====== -->
+    <!-- ====== PRODUCT SERVICES ====== -->
     <section class="section-full section-full-white" id="product">
         <div class="container">
             <div class="pricing-section">
-                <h2>🧠 Strategy</h2>
-                <p class="sub">Clarity before execution. Roadmaps for growth, YouTube, and personal brands.</p>
+                <div style="text-align:center;">
+                    <span class="section-label" style="background:#dcfce7;color:#16a34a;">Fixed Price</span>
+                    <h2>📦 Product Services</h2>
+                    <p class="sub">Fixed scope. Fixed price. Start immediately. Pick what you need.</p>
+                </div>
 
                 <div class="pricing-grid stagger">
+                    <!-- Growth Strategy -->
                     <div class="pricing-card">
                         <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
                         <h4>Growth Strategy</h4>
@@ -168,36 +220,7 @@
                         <a href="product-services.html#growth-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
-                    <div class="pricing-card">
-                        <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
-                        <h4>YouTube Strategy</h4>
-                        <p>A complete roadmap to grow your YouTube channel with intention.</p>
-                        <div class="price">R4,000</div>
-                        <div class="price-sub">one-time</div>
-                        <a href="product-services.html#youtube-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
-                    </div>
-
-                    <div class="pricing-card">
-                        <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
-                        <h4>Personal Brand Strategy</h4>
-                        <p>Build a personal brand people recognise, trust and remember.</p>
-                        <div class="price">R3,000</div>
-                        <div class="price-sub">one-time</div>
-                        <a href="product-services.html#personal-brand" class="btn-primary btn-small service-cta">Purchase Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== AUDIT SERVICES ====== -->
-    <section class="section-full section-full-light-purple">
-        <div class="container">
-            <div class="pricing-section">
-                <h2>🔍 Audits</h2>
-                <p class="sub">Understand what's working and what's holding you back.</p>
-
-                <div class="pricing-grid stagger">
+                    <!-- Content Audit -->
                     <div class="pricing-card">
                         <span class="badge" style="background:#dbeafe;color:#2563eb;">Audit</span>
                         <h4>Content Audit</h4>
@@ -207,6 +230,17 @@
                         <a href="product-services.html#content-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
+                    <!-- YouTube Strategy -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
+                        <h4>YouTube Strategy</h4>
+                        <p>A complete roadmap to grow your YouTube channel with intention.</p>
+                        <div class="price">R4,000</div>
+                        <div class="price-sub">one-time</div>
+                        <a href="product-services.html#youtube-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- YouTube Audit -->
                     <div class="pricing-card">
                         <span class="badge" style="background:#dbeafe;color:#2563eb;">Audit</span>
                         <h4>YouTube Audit</h4>
@@ -215,19 +249,28 @@
                         <div class="price-sub">one-time</div>
                         <a href="product-services.html#youtube-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ====== PRODUCTION SERVICES ====== -->
-    <section class="section-full section-full-white">
-        <div class="container">
-            <div class="pricing-section">
-                <h2>🎬 Production</h2>
-                <p class="sub">Scriptwriting and video editing that makes your content stand out.</p>
+                    <!-- Personal Brand Strategy -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
+                        <h4>Personal Brand Strategy</h4>
+                        <p>Build a personal brand people recognise, trust and remember.</p>
+                        <div class="price">R3,000</div>
+                        <div class="price-sub">one-time</div>
+                        <a href="product-services.html#personal-brand" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
 
-                <div class="pricing-grid stagger">
+                    <!-- Video Editing -->
+                    <div class="pricing-card">
+                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Production</span>
+                        <h4>Video Editing</h4>
+                        <p>Professional editing that makes your content stand out.</p>
+                        <div class="price">R700</div>
+                        <div class="price-sub">per video</div>
+                        <a href="product-services.html#video-editing" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- Scriptwriting -->
                     <div class="pricing-card">
                         <span class="badge" style="background:#dcfce7;color:#16a34a;">Production</span>
                         <h4>Scriptwriting</h4>
@@ -237,27 +280,7 @@
                         <a href="product-services.html#scriptwriting" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
-                    <div class="pricing-card">
-                        <span class="badge" style="background:#dcfce7;color:#16a34a;">Production</span>
-                        <h4>Video Editing</h4>
-                        <p>Professional editing that makes your content stand out.</p>
-                        <div class="price">R700</div>
-                        <div class="price-sub">per video</div>
-                        <a href="product-services.html#video-editing" class="btn-primary btn-small service-cta">Purchase Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== DESIGN SERVICES ====== -->
-    <section class="section-full section-full-light-purple">
-        <div class="container">
-            <div class="pricing-section">
-                <h2>🎨 Design</h2>
-                <p class="sub">Carousels and thumbnails that stop the scroll and build authority.</p>
-
-                <div class="pricing-grid stagger">
+                    <!-- Carousel Design -->
                     <div class="pricing-card">
                         <span class="badge" style="background:#dcfce7;color:#16a34a;">Design</span>
                         <h4>Carousel Design</h4>
@@ -267,6 +290,7 @@
                         <a href="product-services.html#carousel-design" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
 
+                    <!-- Thumbnail Design -->
                     <div class="pricing-card">
                         <span class="badge" style="background:#dcfce7;color:#16a34a;">Design</span>
                         <h4>Thumbnail Design</h4>
@@ -275,19 +299,8 @@
                         <div class="price-sub">per thumbnail</div>
                         <a href="product-services.html#thumbnail-design" class="btn-primary btn-small service-cta">Purchase Now</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ====== PLANNING SERVICES ====== -->
-    <section class="section-full section-full-white">
-        <div class="container">
-            <div class="pricing-section">
-                <h2>📅 Planning</h2>
-                <p class="sub">Monthly content roadmaps that eliminate guesswork.</p>
-
-                <div class="pricing-grid" style="max-width:400px;margin:0 auto;">
+                    <!-- Content Planning -->
                     <div class="pricing-card">
                         <span class="badge" style="background:#fef3c7;color:#d97706;">Planning</span>
                         <h4>Content Planning</h4>
@@ -302,20 +315,23 @@
     </section>
 
     <!-- ====== RETAINER SERVICES ====== -->
-    <section class="section-full section-full-light-blue" id="retainer">
+    <section class="section-full section-full-light-purple" id="retainer">
         <div class="container">
             <div class="pricing-section">
-                <h2>🤝 Retainer Partnerships</h2>
-                <p class="sub">Custom partnerships for businesses ready to scale with ongoing strategic support.</p>
+                <div style="text-align:center;">
+                    <span class="section-label" style="background:#fef3c7;color:#d97706;">Custom Partnership</span>
+                    <h2>🤝 Retainer Services</h2>
+                    <p class="sub">Custom partnerships for businesses ready to scale with ongoing strategic support.</p>
+                </div>
 
-                <div class="retainer-pricing">
-                    <div class="pricing-card" style="border-color:var(--purple);">
+                <div class="retainer-grid">
+                    <div class="pricing-card">
                         <span class="badge" style="background:var(--purple);color:white;">Popular</span>
                         <h4>Content Department</h4>
                         <p>Your outsourced content team. Strategy, production and consistency.</p>
                         <div class="price" style="font-size:24px;">R12,500 – R35,000</div>
                         <div class="price-sub">per month</div>
-                        <a href="retainer-services.html#content-department" class="btn-purple btn-small service-cta">Book Discovery Call</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small service-cta">Book Discovery Call</a>
                     </div>
 
                     <div class="pricing-card">
@@ -324,9 +340,141 @@
                         <p>Strategic partnership for business leaders building authority and revenue through content.</p>
                         <div class="price" style="font-size:24px;">R7,500 – R20,000</div>
                         <div class="price-sub">per month</div>
-                        <a href="retainer-services.html#growth-partner" class="btn-purple btn-small service-cta">Book Discovery Call</a>
+                        <a href="https://calendly.com/hello-frameworkmedia/15min" target="_blank" class="btn-purple btn-small service-cta">Book Discovery Call</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== LAUNCH SERVICES ====== -->
+    <section class="section-full section-full-white" id="launch">
+        <div class="container">
+            <div class="pricing-section">
+                <div style="text-align:center;">
+                    <span class="section-label" style="background:#ede9fe;color:var(--purple);">Best for Beginners</span>
+                    <h2>🚀 Launch Services</h2>
+                    <p class="sub">Everything you need to start. Strategy + content + visuals — all in one package.</p>
+                </div>
+
+                <div class="launch-grid">
+                    <!-- Creator Launch -->
+                    <div class="pricing-card" style="border-color:#fef3c7;">
+                        <span class="savings">🔥 Save 35%</span>
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Creator</span>
+                        <h4>Creator Launch</h4>
+                        <p>Perfect for individuals building a personal brand.</p>
+                        <div class="price">
+                            <span class="original">R7,500</span> R4,875
+                        </div>
+                        <div class="price-sub">one-time</div>
+                        <ul style="list-style:none;margin:12px 0;text-align:left;font-size:13px;color:#374151;flex:1;">
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Personal Brand Strategy</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Profile Optimisation</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 30 Content Ideas</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 10 Scripts</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 10 Edited Videos</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 2 Carousels</li>
+                        </ul>
+                        <a href="#" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+
+                    <!-- Business Launch -->
+                    <div class="pricing-card" style="border-color:var(--purple);">
+                        <span class="savings">🔥 Save 35%</span>
+                        <span class="badge" style="background:var(--purple);color:white;">Popular</span>
+                        <span class="badge" style="background:#fef3c7;color:#d97706;">Business</span>
+                        <h4>Business Launch</h4>
+                        <p>Perfect for businesses starting their content journey.</p>
+                        <div class="price">
+                            <span class="original">R12,500</span> R8,125
+                        </div>
+                        <div class="price-sub">one-time</div>
+                        <ul style="list-style:none;margin:12px 0;text-align:left;font-size:13px;color:#374151;flex:1;">
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Growth Strategy</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Content Calendar</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Brand Messaging</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 10 Scripts</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> 10 Edited Videos</li>
+                            <li style="padding:4px 0;display:flex;gap:8px;align-items:center;"><i class="fas fa-check" style="color:var(--purple);font-size:12px;"></i> Analytics Setup</li>
+                        </ul>
+                        <a href="#" class="btn-primary btn-small service-cta">Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== COMPARISON TABLE ====== -->
+    <section class="section-full section-full-light-blue">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Compare</span>
+                <h2 class="section-title">Which path is right for <span class="highlight">you</span>?</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div style="overflow-x:auto;margin-top:20px;">
+                <table style="width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;">
+                    <thead>
+                        <tr style="background:#f9fafb;">
+                            <th style="padding:16px 20px;text-align:left;font-weight:600;font-size:14px;">Feature</th>
+                            <th style="padding:16px 20px;text-align:center;font-weight:600;font-size:14px;border-left:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;">Product</th>
+                            <th style="padding:16px 20px;text-align:center;font-weight:600;font-size:14px;border-left:1px solid #e5e7eb;background:#fef3c7;color:#d97706;">Retainer</th>
+                            <th style="padding:16px 20px;text-align:center;font-weight:600;font-size:14px;border-left:1px solid #e5e7eb;background:#ede9fe;color:var(--purple);">Launch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;font-size:14px;">Price Type</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;">Fixed</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;">Monthly Range</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;">Fixed</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;font-size:14px;">Start Time</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;">Immediate</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;">After Call</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;">Immediate</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;font-size:14px;">Strategy Included</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#16a34a;"><i class="fas fa-check"></i></td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#16a34a;"><i class="fas fa-check"></i></td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#16a34a;"><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;font-size:14px;">Content Production</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#16a34a;"><i class="fas fa-check"></i></td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#16a34a;"><i class="fas fa-check"></i></td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#16a34a;"><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;font-size:14px;">Ongoing Support</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#9ca3af;"><i class="fas fa-minus"></i></td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#16a34a;"><i class="fas fa-check"></i></td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#9ca3af;"><i class="fas fa-minus"></i></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;font-size:14px;">Strategic Partnership</td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#9ca3af;"><i class="fas fa-minus"></i></td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#16a34a;"><i class="fas fa-check"></i></td>
+                            <td style="padding:12px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;color:#9ca3af;"><i class="fas fa-minus"></i></td>
+                        </tr>
+                        <tr style="background:#f9fafb;font-weight:700;">
+                            <td style="padding:16px 20px;border-top:2px solid #e5e7eb;font-size:14px;">Best For</td>
+                            <td style="padding:16px 20px;border-top:2px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;font-size:13px;font-weight:400;">One-off needs<br>Fixed scope</td>
+                            <td style="padding:16px 20px;border-top:2px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;font-size:13px;font-weight:400;">Scaling businesses<br>Ongoing support</td>
+                            <td style="padding:16px 20px;border-top:2px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;font-size:13px;font-weight:400;">New brands<br>Everything included</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px 20px;border-top:1px solid #e5e7eb;font-size:14px;"></td>
+                            <td style="padding:16px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;"><a href="#product" class="btn-primary btn-small">View All</a></td>
+                            <td style="padding:16px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;"><a href="#retainer" class="btn-purple btn-small">View All</a></td>
+                            <td style="padding:16px 20px;border-top:1px solid #e5e7eb;text-align:center;border-left:1px solid #e5e7eb;"><a href="#launch" class="btn-primary btn-small">View All</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -335,7 +483,7 @@
     <section class="section-full section-full-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Not sure which service is right for <span class="highlight">you</span>?</h2>
+                <h2 class="section-title">Not sure which path is right for <span class="highlight">you</span>?</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Book a free Strategy Call and we'll recommend the right solution for your business.</p>
             </div>
