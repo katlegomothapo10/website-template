@@ -36,6 +36,62 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        .three-paths {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .path-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px 28px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .path-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .path-card .icon {
+            font-size: 36px;
+            color: var(--purple);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .path-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+        .path-card p { color: #4b5563; font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+        .path-card .examples {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .path-card .badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 14px;
+            border-radius: 40px;
+            margin-bottom: 10px;
+        }
+        .badge-green { background: #dcfce7; color: #16a34a; }
+        .badge-gold { background: #fef3c7; color: #d97706; }
+        .badge-purple { background: #ede9fe; color: var(--purple); }
+
+        @media (max-width: 992px) {
+            .three-paths { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .three-paths { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 32px; }
+        }
     </style>
 </head>
 <body>
@@ -50,10 +106,11 @@
         </button>
         <nav class="nav-links" id="navLinks">
             <a href="services.html" class="active">Services</a>
+            <a href="all-products.html">Pricing</a>
+            <a href="launch.html">Launch</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="testimonials.html">Testimonials</a>
             <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
             <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
     </header>
@@ -66,40 +123,67 @@
         </div>
     </section>
 
-    <!-- ====== TWO PATHS ====== -->
+    <!-- ====== THREE PATHS ====== -->
     <section class="section-full section-full-white">
         <div class="container">
-            <div class="paths-grid">
-                <div class="path-card reveal-left">
+            <div class="section-header">
+                <span class="pill reveal">How We Help</span>
+                <h2 class="section-title">Three ways to work with <span class="highlight">Framework Media</span>.</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="three-paths">
+                <!-- Path 1: Product Services -->
+                <div class="path-card reveal">
                     <span class="icon"><i class="fas fa-box"></i></span>
                     <span class="badge badge-green">Fixed Price</span>
                     <h3>Product Services</h3>
                     <p>Fixed scope. Fixed price. Start immediately. Perfect for businesses that know exactly what they need.</p>
-                    <a href="product-services.html" class="btn-primary" style="width:100%;">Browse Product Services</a>
+                    <div class="examples">
+                        <strong>Examples:</strong> Growth Strategy, Content Audit, YouTube Strategy, Editing, Scriptwriting, Carousel Design, Thumbnail Design
+                    </div>
+                    <a href="product-services.html" class="btn-primary btn-small" style="width:100%;">Browse Products</a>
                 </div>
 
-                <div class="path-card reveal-right">
+                <!-- Path 2: Retainer Services -->
+                <div class="path-card reveal">
                     <span class="icon"><i class="fas fa-handshake"></i></span>
                     <span class="badge badge-gold">Custom Partnership</span>
                     <h3>Retainer Services</h3>
                     <p>Custom partnerships. Strategy-led. Long-term. Perfect for businesses scaling with ongoing strategic support.</p>
-                    <a href="retainer-services.html" class="btn-purple" style="width:100%;">Explore Retainers</a>
+                    <div class="examples">
+                        <strong>Examples:</strong> Content Department, Growth Partner
+                    </div>
+                    <a href="retainer-services.html" class="btn-purple btn-small" style="width:100%;">Explore Retainers</a>
+                </div>
+
+                <!-- Path 3: Launch Package -->
+                <div class="path-card reveal" style="border-color:var(--purple);">
+                    <span class="icon"><i class="fas fa-rocket"></i></span>
+                    <span class="badge badge-purple">Best for Beginners</span>
+                    <h3>Launch Package</h3>
+                    <p>Everything you need to start. Strategy + content + visuals — all in one package.</p>
+                    <div class="examples">
+                        <strong>Includes:</strong> Strategy, Scripts, Videos, Carousels, Profile Optimisation
+                    </div>
+                    <a href="launch.html" class="btn-purple btn-small" style="width:100%;">View Launch Packages</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== FULL SERVICE LIST ====== -->
-    <section class="section-full section-full-light-purple">
+    <!-- ====== PRODUCT SERVICES ====== -->
+    <section class="section-full section-full-light-purple" id="product">
         <div class="container">
             <div class="section-header">
-                <span class="pill reveal">All Services</span>
-                <h2 class="section-title">Every service we <span class="highlight">offer</span>.</h2>
+                <span class="pill reveal">Product Services</span>
+                <h2 class="section-title">Fixed scope. Fixed price. <span class="highlight">Start immediately</span>.</h2>
                 <div class="accent-line"></div>
+                <p class="section-sub">No calls needed. Just pick what you need and purchase directly.</p>
             </div>
 
             <div class="services-grid stagger">
-                <!-- Product Services -->
+                <!-- Growth Strategy -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
                     <h4>Growth Strategy</h4>
@@ -108,6 +192,7 @@
                     <a href="product-services.html#growth-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- Content Audit -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#dbeafe;color:#2563eb;">Audit</span>
                     <h4>Content Audit</h4>
@@ -116,6 +201,7 @@
                     <a href="product-services.html#content-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- YouTube Strategy -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
                     <h4>YouTube Strategy</h4>
@@ -124,6 +210,7 @@
                     <a href="product-services.html#youtube-strategy" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- YouTube Audit -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#dbeafe;color:#2563eb;">Audit</span>
                     <h4>YouTube Audit</h4>
@@ -132,6 +219,7 @@
                     <a href="product-services.html#youtube-audit" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- Personal Brand Strategy -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#fef3c7;color:#d97706;">Strategy</span>
                     <h4>Personal Brand Strategy</h4>
@@ -140,6 +228,7 @@
                     <a href="product-services.html#personal-brand" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- Video Editing -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#dcfce7;color:#16a34a;">Production</span>
                     <h4>Video Editing</h4>
@@ -148,6 +237,7 @@
                     <a href="product-services.html#video-editing" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- Scriptwriting -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#dcfce7;color:#16a34a;">Production</span>
                     <h4>Scriptwriting</h4>
@@ -156,6 +246,7 @@
                     <a href="product-services.html#scriptwriting" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- Carousel Design -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#dcfce7;color:#16a34a;">Design</span>
                     <h4>Carousel Design</h4>
@@ -164,6 +255,7 @@
                     <a href="product-services.html#carousel-design" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- Thumbnail Design -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#dcfce7;color:#16a34a;">Design</span>
                     <h4>Thumbnail Design</h4>
@@ -172,6 +264,7 @@
                     <a href="product-services.html#thumbnail-design" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
 
+                <!-- Content Planning -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#fef3c7;color:#d97706;">Planning</span>
                     <h4>Content Planning</h4>
@@ -179,8 +272,22 @@
                     <div class="price">R1,500 / month</div>
                     <a href="product-services.html#content-planning" class="btn-primary btn-small service-cta">Purchase Now</a>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Retainer Services -->
+    <!-- ====== RETAINER SERVICES ====== -->
+    <section class="section-full section-full-white" id="retainer">
+        <div class="container">
+            <div class="section-header">
+                <span class="pill reveal">Retainer Services</span>
+                <h2 class="section-title">Custom partnerships. Strategy-led. <span class="highlight">Long-term</span>.</h2>
+                <div class="accent-line"></div>
+                <p class="section-sub">For businesses ready to scale with ongoing strategic support.</p>
+            </div>
+
+            <div class="services-grid" style="max-width:800px;margin:0 auto;">
+                <!-- Content Department -->
                 <div class="service-card" style="border-color:var(--purple);">
                     <span class="service-badge" style="background:var(--purple);color:white;">Popular</span>
                     <h4>Content Department</h4>
@@ -189,6 +296,7 @@
                     <a href="retainer-services.html#content-department" class="btn-purple btn-small service-cta">Book Discovery Call</a>
                 </div>
 
+                <!-- Growth Partner -->
                 <div class="service-card">
                     <span class="service-badge" style="background:#fef3c7;color:#d97706;">Executive</span>
                     <h4>Growth Partner</h4>
@@ -204,7 +312,7 @@
     <section class="section-full section-full-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Not sure which service is right for you?</h2>
+                <h2 class="section-title">Not sure which path is right for <span class="highlight">you</span>?</h2>
                 <div class="accent-line"></div>
                 <p class="section-sub">Book a free Strategy Call and we'll recommend the right solution for your business.</p>
             </div>
@@ -229,7 +337,8 @@
                     <h4>Services</h4>
                     <a href="product-services.html">Product Services</a>
                     <a href="retainer-services.html">Retainer Services</a>
-                    <a href="services.html">All Services</a>
+                    <a href="launch.html">Launch Package</a>
+                    <a href="all-products.html">All Products</a>
                 </div>
 
                 <div class="footer-col">
