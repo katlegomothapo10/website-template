@@ -11,29 +11,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* ===== DISCOUNT BANNER — FIXED ===== */
         .discount-banner {
             background: linear-gradient(135deg, #dc2626, #991b1b);
-            padding: 10px 20px;
+            padding: 8px 16px;
             text-align: center;
             color: white;
             font-weight: 600;
-            font-size: 14px;
-            position: relative;
-            z-index: 1001;
+            font-size: 13px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1002;
+            box-shadow: 0 2px 12px rgba(220, 38, 38, 0.25);
         }
         .discount-banner .timer {
             display: inline-flex;
             gap: 2px;
             font-weight: 700;
             background: rgba(0,0,0,0.2);
-            padding: 2px 12px;
+            padding: 2px 10px;
             border-radius: 40px;
-            margin: 0 8px;
-            font-size: 15px;
+            margin: 0 6px;
+            font-size: 14px;
             font-variant-numeric: tabular-nums;
         }
         .discount-banner .timer span {
-            min-width: 20px;
+            min-width: 18px;
             display: inline-block;
             text-align: center;
         }
@@ -42,14 +47,32 @@
         }
         .discount-banner .tag {
             background: rgba(255,255,255,0.2);
-            padding: 2px 12px;
+            padding: 2px 10px;
             border-radius: 40px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-right: 6px;
         }
+
+        /* ===== NAVBAR — ADJUSTED FOR BANNER ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 24px;
+            background: white;
+            position: fixed;
+            top: 38px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+        }
+
+        /* ===== HERO — ADJUSTED FOR BANNER ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -57,10 +80,13 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            padding: 120px 24px 80px;
+            padding: 150px 24px 80px;
+            margin-top: 0;
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.82), rgba(22, 33, 62, 0.82)), url('images/hero-bg.png') center/cover no-repeat;
             overflow: hidden;
         }
+
+        /* ===== REST OF STYLES ===== */
         .hero .orb-1 {
             position: absolute;
             width: 400px;
@@ -130,6 +156,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .hero-stats {
             display: flex;
             justify-content: center;
@@ -210,6 +237,13 @@
             font-weight: 800;
             color: var(--purple);
         }
+        .flagship-section .flagship-content .price .original {
+            font-size: 18px;
+            color: #9ca3af;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-right: 8px;
+        }
         .flagship-section .flagship-content .price-sub {
             font-size: 14px;
             color: #6b7280;
@@ -231,6 +265,16 @@
         .flagship-section .flagship-content .flagship-features span i {
             color: var(--purple);
             font-size: 11px;
+        }
+        .flagship-section .flagship-content .savings-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin-top: 4px;
         }
 
         .help-grid {
@@ -379,10 +423,13 @@
         }
 
         @media (max-width: 768px) {
-            .discount-banner { font-size: 12px; padding: 6px 12px; }
-            .discount-banner .timer { font-size: 12px; padding: 1px 8px; }
-            .discount-banner .timer span { min-width: 14px; }
-            .hero { padding: 100px 16px 60px; }
+            .discount-banner { font-size: 11px; padding: 5px 10px; top: 0; }
+            .discount-banner .timer { font-size: 11px; padding: 1px 6px; }
+            .discount-banner .timer span { min-width: 12px; }
+            .navbar { top: 32px; padding: 10px 16px; flex-wrap: wrap; justify-content: center; gap: 6px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .nav-links a { font-size: 12px; }
+            .hero { padding: 110px 16px 60px; }
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
             .hero-actions { flex-direction: column; align-items: center; }
@@ -400,10 +447,12 @@
         }
 
         @media (max-width: 480px) {
-            .discount-banner { font-size: 10px; padding: 4px 8px; }
-            .discount-banner .timer { font-size: 10px; padding: 1px 6px; }
-            .discount-banner .timer span { min-width: 12px; }
-            .discount-banner .tag { font-size: 8px; padding: 1px 8px; }
+            .discount-banner { font-size: 9px; padding: 4px 6px; }
+            .discount-banner .timer { font-size: 9px; padding: 1px 4px; }
+            .discount-banner .timer span { min-width: 10px; }
+            .discount-banner .tag { font-size: 7px; padding: 1px 6px; }
+            .navbar { top: 28px; padding: 8px 12px; }
+            .hero { padding: 90px 16px 40px; }
             .hero h1 { font-size: 28px; }
             .hero-tag { font-size: 10px; padding: 3px 12px; }
             .hero-stats { gap: 20px; }
@@ -418,7 +467,7 @@
     <!-- ====== DISCOUNT BANNER ====== -->
     <div class="discount-banner" id="discountBanner">
         <span class="tag">Founders' Discount</span>
-        35% off select services
+        35% off Growth Strategy & Launch Packages
         <span class="timer" id="countdownTimer">
             <span id="days">00</span><span class="colon">:</span>
             <span id="hours">00</span><span class="colon">:</span>
@@ -443,6 +492,7 @@
             <a href="case-studies.html">Case Studies</a>
             <a href="testimonials.html">Testimonials</a>
             <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
             <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
     </header>
@@ -531,6 +581,7 @@
                     <span class="flagship-badge">Featured</span>
                     <h2>Growth <span class="highlight">Strategy</span></h2>
                     <p>A complete roadmap for your brand's content growth — from positioning to 90-day action plan. This is the same system that grew our own brand to 60K+ followers.</p>
+                    <span class="savings-badge">🔥 35% Off — Founders' Discount</span>
                     <div class="flagship-features">
                         <span><i class="fas fa-check"></i> Discovery Workshop</span>
                         <span><i class="fas fa-check"></i> Business & Brand Audit</span>
@@ -541,7 +592,9 @@
                         <span><i class="fas fa-check"></i> 90-Day Growth Blueprint</span>
                         <span><i class="fas fa-check"></i> Strategic Recommendations</span>
                     </div>
-                    <div class="price">R5,000</div>
+                    <div class="price">
+                        <span class="original">R5,000</span> R3,250
+                    </div>
                     <div class="price-sub">one-time investment</div>
                     <a href="product-services.html#growth-strategy" class="btn-purple" style="display:inline-block;">Purchase Now</a>
                 </div>
@@ -728,6 +781,7 @@
                     <a href="about.html">About</a>
                     <a href="case-studies.html">Case Studies</a>
                     <a href="testimonials.html">Testimonials</a>
+                    <a href="faq.html">FAQ</a>
                     <a href="contact.html">Contact</a>
                 </div>
 
