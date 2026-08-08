@@ -133,33 +133,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 // ================================================
-// ===== CONTACT FORM SUBMISSION =====
-// ================================================
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const fullName = document.getElementById('fullName')?.value || '';
-        const email = document.getElementById('email')?.value || '';
-        const message = document.getElementById('message')?.value || '';
-        const budget = document.getElementById('budget')?.value || 'Not specified';
-
-        if (!fullName || !email || !message) {
-            alert('Please fill in your name, email, and message.');
-            return;
-        }
-
-        const emailBody = `New Message from Framework Media:%0A%0AName: ${fullName}%0AEmail: ${email}%0ABudget: ${budget}%0AMessage: ${message}%0A%0APlease follow up within 24 hours.`;
-
-        window.location.href = `mailto:hello@frameworkmedia.co.za?subject=New Message from ${fullName}&body=${emailBody}`;
-
-        alert('Thank you! We\'ll get back to you within 24 hours.');
-        this.reset();
-    });
-}
-
-// ================================================
 // ===== CLOSE MOBILE NAV ON LINK CLICK =====
 // ================================================
 document.querySelectorAll('.nav-links a').forEach(link => {
